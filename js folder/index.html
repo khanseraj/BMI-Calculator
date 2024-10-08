@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="card">
+        <div class="card-header text-center">BMI Calculator</div>
+        <div class="card-body">
+          <form class="w-50 m-auto" onsubmit="return false">
+
+            <div class="form-group">
+              <label>Weight: </label>
+              <input type="number" name="" placeholder="Weight in Kg" required id="weight" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label>Height: </label>
+              <input type="text" name="" placeholder="Height in Ft" required id="height" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label>BMI value: </label>
+              <input type="number" name="" placeholder="" required id="bmivalue" class="form-control">
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-success" onclick="getbmivalue()">Check BMI</button>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer text-center">A healthy BMI ranges between 19 and 25. </div>
+      </div>
+    </div>
+
+    <script>
+      
+      function getbmivalue(){
+        var weight = document.getElementById('weight').value;
+        var height = document.getElementById('height').value;
+
+        height = height * 12;
+        height = height * 0.025;    //  now height in meter
+
+        var newbmivalue = weight / (height * height);
+
+        newbmivalue = Math.round(newbmivalue);
+
+        document.getElementById('bmivalue').value = newbmivalue;
+
+
+      }
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+  </body>
+</html>
